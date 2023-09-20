@@ -23,7 +23,7 @@ const renderCountryItem = (countryItems) =>{
         card_container_content += `<div class="card overflow-hidden shadow-[0px_0px_10px_1px_rgba(0,0,0,0.20)] rounded-md max-w-xs cursor-pointer hover:scale-105 transition-[all_linear] duration-[0.3s] h-[370px]">
                                         <img class="h-3/6 w-[320px] pointer-events-none" src="${country['flags']['png']}" alt="${country['name']} flag image">
                                         <div class="px-4 py-8 dark:bg-darkBlue h-3/6 pointer-events-none">
-                                            <p id="country-name" class="text-lg mb-5 font-extrabold">${country['name']}</p>
+                                            <p id="country-name" class="text-lg mb-5 font-extrabold">${country['name']['common']}</p>
                                             <p class="font-semibold">Population: <span class="font-light">${country['population']}</span></p>
                                             <p class="font-semibold">Region: <span class="font-light">${country['region']}</span></p>
                                             <p class="font-semibold">Capital: <span class="font-light">${country['capital']}</span></p>
@@ -78,7 +78,7 @@ const inputHandler = async (input) =>{
     const allCountries = await countries();
 
     //get all countries according to region
-    const countriesAccdgInput = allCountries.filter(element => element['name'].toLowerCase().includes(input.toLowerCase()));
+    const countriesAccdgInput = allCountries.filter(element => element['name']['common'].toLowerCase().includes(input.toLowerCase()));
 
     //render Cards
     renderCountryItem(countriesAccdgInput);
@@ -110,7 +110,7 @@ const cardClickHandler = async (e) =>{
     const clickedCountryName = clickedEl.querySelector('#country-name').textContent
     
     allCountries.forEach(country => {
-        if(country["name"] === clickedCountryName){
+        if(country["name"]['common'] === clickedCountryName){
             countryDetails = country;
         }
     });
