@@ -1,4 +1,4 @@
-//Globals
+
 const darkmodeContainerBtnEl = document.getElementById('darkmode-container-btn');
 const darkLightModeTextEl = document.getElementById('dark-light-mode-text');
 const sunIconEl = document.getElementById('sun-icon');
@@ -62,7 +62,7 @@ themeCheck();
 const countries = async () =>{
 
     try {
-        const response = await fetch('.././data.json');
+        const response = await fetch('https://restcountries.com/v3.1/all ');
         if(response.ok){
             const data = await response.json();
             return data;
