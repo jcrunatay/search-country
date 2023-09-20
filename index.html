@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searh Country</title>
+    <link href="./build/css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&family=Pacifico&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="./src/script.js"></script>
+    <script defer src="./src/common.js"></script>
+
+</head>
+<body class="bg-veryLightGray font-nunitoSans text-veryDarkBlueText dark:bg-veryDarkBlueBg dark:text-whiteDarkModeText">
+    <header class="py-7 shadow-md dark:bg-darkBlue">
+        <div class="flex justify-between max-w-7xl m-auto px-5">
+            <h1 class="text-sm md:text-2xl font-extrabold cursor-pointer">Where in the world?</h1>
+            <div class="flex justify-center items-center cursor-pointer" id="darkmode-container-btn">
+                <img class="w-3 h-3 md:w-4 md:h-4" src="./assets/icon/icon-moon.svg" id="moon-icon" alt="moon icon">
+                <img class="w-3 h-3 hidden md:w-4 md:h-4" src="./assets/icon/icon-sun.svg" id="sun-icon" alt="sun icon">
+                <p id="dark-light-mode-text" class="text-xs md:text-base font-semibold ps-2.5">Dark Mode</p>
+            </div>
+        </div>
+    </header>
+    <div class="text-sm md:text-base max-w-7xl m-auto px-5">
+        <div class="flex flex-col flex-wrap md:flex-nowrap  md:flex-row md:justify-between md:items-center">
+            <div class="form my-5  h-[50px] shadow-[0px_0px_10px_1px_rgba(0,0,0,0.20)] rounded-md flex items-center w-full sm:w-5/12 dark:bg-darkBlue">
+                <img src="./assets/icon/icon-search.svg" class="w-5 h-5 ms-5" alt="search icon">
+                <input id="searched-country-input" type="text" class="ms-5 w-3/4 outline-none border-0 bg-transparent" placeholder="Search for a country...">
+            </div>
+    
+            <!-- DROPDOWN -->
+            <div class="relative my-10">
+                <div id="region-filter-btn" class="h-[50px] shadow-[0px_0px_10px_1px_rgba(0,0,0,0.20)] rounded-md w-[200px] flex items-center justify-between cursor-pointer dark:bg-darkBlue"">
+                    <p id="selected-region-text" class="ms-4 font-semibold">Filter by region</p>
+                    <svg class="w-[25px] h-[25px] me-4 caret-down transition-[all_linear] duration-[0.3s]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Arrow / Caret_Down_SM">
+                    <path id="Vector" d="M15 11L12 14L9 11" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    </svg>
+                </div>
+                <ul  id="region-dropdown" class=" z-10 bg-white font-semibold hidden list-none absolute mt-2 border w-[200px] overflow-hidden  shadow-[0px_0px_5px_1px_rgba(0,0,0,0.20)] rounded-md dark:bg-darkBlue"">
+                    <li class="py-1 px-3 region-btn cursor-pointer hover:bg-[rgba(0,0,0,0.5)]">All</li>
+                    <li class="py-1 px-3 region-btn cursor-pointer hover:bg-[rgba(0,0,0,0.5)]">Africa</li>
+                    <li class="py-1 px-3 region-btn cursor-pointer hover:bg-[rgba(0,0,0,0.5)]">Americas</li>
+                    <li class="py-1 px-3 region-btn cursor-pointer hover:bg-[rgba(0,0,0,0.5)]">Asia</li>
+                    <li class="py-1 px-3 region-btn cursor-pointer hover:bg-[rgba(0,0,0,0.5)]">Europe</li>
+                    <li class="py-1 px-3 region-btn cursor-pointer hover:bg-[rgba(0,0,0,0.5)]">Oceania</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- list of countries -->
+        <div id="card-container" class="grid-cols-1 grid gap-10 justify-items-center  justify-center pb-16 sm:grid-cols-[repeat(2,auto)] lg:grid-cols-[repeat(3,auto)] xl:grid-cols-4">
+            
+            <!-- About the country -->
+            <!-- <div class="cursor-pointer hover:scale-105 transition-[all_linear] duration-[0.3s] overflow-hidden shadow-[0px_0px_10px_1px_rgba(0,0,0,0.20)] rounded-md max-w-xs h-[380px]">
+                <img class="h-3/6 w-[300px]" src="https://flagcdn.com/w320/ad.png" alt="">
+                <div class="px-6 py-8">
+                    <p class="text-lg mb-5 font-extrabold">Germany</p>
+                    <p class="font-semibold">Population: <span class="font-light">81,770,900</span></p>
+                    <p class="font-semibold">Region: <span class="font-light">Europe</span></p>
+                    <p class="font-semibold">Capital: <span class="font-light">Berlin</span></p>
+                </div>
+            </div> -->
+            
+        </div>
+        
+    </div>
+</body>
+</html>
